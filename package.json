@@ -1,0 +1,16 @@
+{
+  "name": "singleton-explanation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "Vladyslav Braslavskyi <vladyslav.braslavskyi@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
