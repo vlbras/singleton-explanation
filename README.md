@@ -1,6 +1,15 @@
+The repository contains an explanation of a Singleton and sample implementation code for a common scenario.
+
 # Singleton Explanation
 
 Singleton is a creational design pattern, which ensures that only one instance of a class exists and provides a single point of access to it for any other code.
+
+## Problems
+
+The Singleton pattern solves two problems:
+
+• It ensures only one instance of a class exists, often to manage access to resources like a database or a file. Imagine creating an object and then attempting to create another; you'll get the first object instead of a new one.    
+• It provides global access to that instance, similar to a global variable, but safer. It allows access from anywhere while preventing other code from overwriting it.
 
 ## Implementation
 
@@ -13,8 +22,7 @@ All implementations of the Singleton have these two steps in common:
 
 ```ts
 // The Logger class defines the `getInstance` method that lets
-// access to the same instance of a Logger and uniquely identify
-// logs throughout the program
+// access to the same instance of a Logger
 export class Logger {
   // The field for storing the singleton instance should be
   // declared static.
@@ -85,9 +93,9 @@ export class UsersService {
 }
 ```
 
-Make the same for ```posts.service```
+Make the same for ```posts.service```.
 
-You are now ready to test the Logger used in UsersService and PostsService and ensure that each log has a unique ID
+Now you are ready to ensure that UsersService and PostsService are using the same Logger instance, since each log has a unique ID.
 
 ```ts
 import { PostsService } from "./services/posts.service";
@@ -101,3 +109,5 @@ postsService.findAll(); // [1] INFO Find all posts
 postsService.findAll(); // [2] INFO Find all posts
 usersService.findAll(); // [3] INFO Find all users
 ```
+
+For more information: https://refactoring.guru/design-patterns/singleton
